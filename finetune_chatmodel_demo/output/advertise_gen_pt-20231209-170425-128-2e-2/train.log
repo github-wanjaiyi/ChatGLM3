@@ -1,0 +1,37 @@
+[2023-12-09 17:04:28,589] torch.distributed.run: [WARNING] master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+Traceback (most recent call last):
+  File "/home/ubuntu/ChatGLM3/finetune_chatmodel_demo/finetune.py", line 42, in <module>
+    from preprocess_utils import sanity_check, MultiTurnDataset, InputOutputDataset
+  File "/home/ubuntu/ChatGLM3/finetune_chatmodel_demo/preprocess_utils.py", line 3, in <module>
+    import astunparse
+ModuleNotFoundError: No module named 'astunparse'
+[2023-12-09 17:04:33,759] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 49843) of binary: /home/ubuntu/miniconda3/envs/chatglm3-6b/bin/python
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/lib/python3.10/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/ubuntu/miniconda3/envs/chatglm3-6b/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+finetune.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-12-09_17:04:33
+  host      : DESKTOP-KBECE9B.
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 49843)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
